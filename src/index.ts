@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import routes from "./routes/routes";
 
 const app = express();
 
@@ -7,15 +8,11 @@ const app = express();
 const port = 3000;
 
 app.use(express.static(path.join(__dirname, "../public")));
+app.use(routes);
 
 // Configuração do EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
-//Rota
-app.get("/home", (req, res) => {
-  res.render("index", { message: "Hello, EJS!" });
-});
 
 app.listen(port, () => 
   console.log(`Servidor rodando em http://localhost:${port}`)
