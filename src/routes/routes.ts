@@ -6,4 +6,3 @@ const routes = Router();
 routes.get("/home", TaskController.getAll);
 
 export default routes;
-

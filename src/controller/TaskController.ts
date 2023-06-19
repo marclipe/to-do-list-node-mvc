@@ -5,7 +5,3 @@ export class TaskController {
     return res.render("index");
   }
 }
-
-// const getAll = (req: Request, res: Response) => {
-//   return res.render("index");
-// }
